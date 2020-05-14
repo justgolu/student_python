@@ -12,15 +12,10 @@ def add():
         "standard": None
     }
     student_d["name"] = input("enter student name: ")
-    database.append(student_d)
     student_d["roll_no"] = input("enter student roll_no: ")
-    database.append(student_d)
     student_d["addres"] = input("enter student address: ")
-    database.append(student_d)
     student_d["contact"] = input("enter student contact: ")
-    database.append(student_d)
     student_d["city"] = input("enter student city: ")
-    database.append(student_d)
     student_d["standard"] = input("enter student standard: ")
     database.append(student_d)
 
@@ -29,6 +24,11 @@ def show():
     global database
     for stud in database:
         print(stud["name"])
+        print(stud["roll_no"])
+        print(stud["addres"])
+        print(stud["contact"])
+        print(stud["city"])
+        print(stud["standard"])
 
 
 # ask user hw many student you want to enter.
