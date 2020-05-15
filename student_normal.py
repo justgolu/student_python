@@ -1,4 +1,43 @@
-database = []
+database = [{
+    "name": "a",
+    "roll_no": "1",
+    "addres": "aaa",
+    "contact": "544",
+    "city": "bbb",
+    "standard": "2"
+},
+    {
+    "name": "b",
+        "roll_no": "2",
+        "addres": "aaa",
+        "contact": "544",
+        "city": "bbb",
+        "standard": "2"
+},
+    {
+    "name": "c",
+        "roll_no": "3",
+        "addres": "aaa",
+        "contact": "544",
+        "city": "bbb",
+        "standard": "2"
+},
+    {"name": "d",
+
+        "roll_no": "4",
+        "addres": "aaa",
+        "contact": "544",
+        "city": "bbb",
+        "standard": "2"
+     },
+    {
+        "name": "e",
+        "roll_no": "5",
+        "addres": "aaa",
+        "contact": "544",
+        "city": "bbb",
+        "standard": "2"
+}]
 
 
 def add():
@@ -29,12 +68,52 @@ def show():
         print(stud["contact"])
         print(stud["city"])
         print(stud["standard"])
+        print("\n")
+
+
+def search(rn):
+    global database
+
+    for elem in database:
+        if(elem["roll_no"] == rn):
+            return elem
+    return "not found"
+
+
+def delete(rn):
+    for i in range(len(database)):
+        if(database[i]["roll_no"] == rn):
+            elem = database.pop(i)
+            return "studnet with roll no : " + rn + " is deleted"
+    return "not found"
+
+
+def update(rm, No, name, addres, contact, city, standard):
+    for i in range(len(database)):
+        if(database[i]["roll_no"] == rm):
+            database[i]["roll_no"] = No
+            database[i]["name"] = name
+            database[i]["addres"] = addres
+            database[i]["contact"] = contact
+            database[i]["city"] = city
+            database[i]["standard"] = standard
+
+            return "student with roll no: " + rm + " is updated"
+    return "not found"
 
 
 # ask user hw many student you want to enter.
+# add()
+# add()
+# show()
+roll = input("enetr roll no to be updated: ")
+rollno = input("enter rollno: ")
+name = input("enetr name to be updated: ")
+address = input("enetr address to be updated: ")
+contact = input("enetr contact to be updated: ")
+city = input("enetr city to be updated: ")
+standard = input("enetr standard to be updated: ")
+res = update(roll, rollno, name, address, contact, city, standard)
 
-
-add()
-
-
+print(res)
 show()
