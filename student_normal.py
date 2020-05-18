@@ -105,35 +105,37 @@ def update(rm, No, name, addres, contact, city, standard):
 print("\nOperations used, ") 
 print("\n1.Accept Student details\n2.Display Student Details\n3.Search Details of a Student\n4.Delete Details of Student""\n5.Update Student Details\n6.Exit") 
 
-ch = int(input("Enter the choice: "))
-if(ch == 1):
-    add()
-    for student in database:
-        print(student)
-elif(ch == 2):
-    showall()
-elif(ch == 3):
-    res = search(input("Enter the roll no: "))
-    print(res)
-elif(ch == 4):
-    res = delete(input("Enter the roll no: "))
-    print("The Student with roll no "+ res +" is deleted")
-    for student in database:
-        print(student)
-elif(ch == 5):
-    roll = input("enetr roll no to be updated: ")
-    rollno = input("enter rollno: ")
-    name = input("enetr name to be updated: ")
-    address = input("enetr address to be updated: ")
-    contact = input("enetr contact to be updated: ")
-    city = input("enetr city to be updated: ")
-    standard = input("enetr standard to be updated: ")
-    res = update(roll, rollno, name, address, contact, city, standard)
-    print(res)
-    for student in database:
-        print(student)
-else:
-    print("Thank You!!")
+for ch in range(1,6):
+    ch = int(input("Enter the choice: "))
+
+    if(ch == 1):
+        add()
+        for student in database:
+         print(student)
+    elif(ch == 2):
+        showall()
+    elif(ch == 3):
+        res = search(input("Enter the roll no: "))
+        print(res)
+    elif(ch == 4):
+        res = delete(input("Enter the roll no: "))
+        print("The Student with roll no "+ res +" is deleted")
+        for student in database:
+         print(student)
+    elif(ch == 5):
+        roll = input("enetr roll no to be updated: ")
+        rollno = input("enter rollno: ")
+        name = input("enetr name to be updated: ")
+        address = input("enetr address to be updated: ")
+        contact = input("enetr contact to be updated: ")
+        city = input("enetr city to be updated: ")
+        standard = input("enetr standard to be updated: ")
+        res = update(roll, rollno, name, address, contact, city, standard)
+        print(res)
+        for student in database:
+            print(student)
+    else:
+        print("Thank You!!")
 
     
 
